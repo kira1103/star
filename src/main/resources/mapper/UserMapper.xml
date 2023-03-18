@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mabits.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sayaru.star.mapper.UserMapper">
+    <resultMap id="UserInfo" type="com.sayaru.star.vo.DAttUserVO">
+        <result property="id" column="id"/>
+        <result property="staffId" column="staff_id"/>
+        <result property="staffName" column="staff_name"/>
+    </resultMap>
+
+    <!--List<DAttUserVO> selectUserInfo();-->
+    <select id="selectUserInfo" resultMap="UserInfo">
+        select id,staff_id,staff_name
+        from d_att_user
+    </select>
+</mapper>
